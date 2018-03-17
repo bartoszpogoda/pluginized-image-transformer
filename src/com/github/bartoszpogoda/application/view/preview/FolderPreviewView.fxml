@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.bartoszpogoda.application.view.preview.FolderPreviewController" />
+<AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.bartoszpogoda.application.view.preview.FolderPreviewController">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutY="4.0" prefHeight="200.0" prefWidth="800.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <content>
+            <Pane fx:id="thumbnailsPane" prefHeight="200.0" prefWidth="1000.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

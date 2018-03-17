@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.github.bartoszpogoda.application.model.ThumbnailLoader;
+import com.github.bartoszpogoda.application.view.preview.FolderPreviewController;
 
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
@@ -17,6 +18,12 @@ public class FileTreeController implements Initializable {
 
 	@FXML
 	TreeView<File> treeView;
+	
+	private FolderPreviewController folderPreviewController;
+	
+	public void setFolderPreviewController(FolderPreviewController folderPreviewController) {
+		this.folderPreviewController = folderPreviewController;
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -43,7 +50,7 @@ public class FileTreeController implements Initializable {
 			System.out.println("Selected: " + newValue.getValue().getName());
 			
 			// test
-			new ThumbnailLoader().loadThumbs(null, newValue.getValue());
+			folderPreviewController.loadThumbs(newValue.getValue());
 		});
 
 	}

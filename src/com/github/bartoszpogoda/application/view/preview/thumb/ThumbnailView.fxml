@@ -4,11 +4,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
+<AnchorPane fx:id="anchorPane" maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.bartoszpogoda.application.view.preview.thumb.ThumbnailController">
    <children>
-      <ImageView fitHeight="190.0" fitWidth="190.0" layoutX="15.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image name" wrappingWidth="172.6708984375" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-      <AnchorPane layoutX="-3.0" layoutY="163.0" prefHeight="20.0" prefWidth="208.0" style="-fx-background-color: red; -fx-opacity: 0.1;" />
+      <ImageView fx:id="imageView" fitHeight="190.0" fitWidth="190.0" layoutX="15.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <Text fx:id="imageName" layoutX="18.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image name" wrappingWidth="172.6708984375" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="9.3291015625" />
+      <AnchorPane layoutX="-3.0" layoutY="156.0" prefHeight="27.0" prefWidth="208.0" style="-fx-background-color: red; -fx-opacity: 0.1;" />
    </children>
 </AnchorPane>
