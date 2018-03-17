@@ -3,7 +3,9 @@ package com.github.bartoszpogoda.application.view.editor;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import com.github.bartoszpogoda.application.model.Thumbnail;
+import com.github.bartoszpogoda.application.model.editor.plugin.ImageTransformPlugin;
+import com.github.bartoszpogoda.application.model.editor.plugin.impl.RotateImageTransformPlugin;
+import com.github.bartoszpogoda.application.model.thumbnail.Thumbnail;
 
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -25,16 +27,23 @@ public class ImageEditorController {
 			@Override
 			protected Void call() throws Exception {
 
-				Image fullSizeImage = new Image(new FileInputStream(thumbnail.getPath()), imageView.getFitWidth(), imageView.getFitHeight(), true, true);
+				Image fullSizeImage = new Image(new FileInputStream(thumbnail.getPath()), imageView.getFitWidth(),
+						imageView.getFitHeight(), true, true);
 
 				Platform.runLater(() -> {
-					imageView.setImage(fullSizeImage);
+					// test
+					ImageTransformPlugin plug = new RotateImageTransformPlugin();
+					Image transformedImage = plug.transform(fullSizeImage);
+					imageView.setImage(transformedImage);
+					// test end
+					
+//					imageView.setImage(fullSizeImage);
 				});
 
 				return null;
 			}
 		};
-		
+
 		Thread thread = new Thread(task);
 		thread.setDaemon(true);
 		thread.start();

@@ -1,4 +1,4 @@
-package com.github.bartoszpogoda.application.model;
+package com.github.bartoszpogoda.application.model.thumbnail;
 
 import java.io.File;
 import java.io.FileInputStream;

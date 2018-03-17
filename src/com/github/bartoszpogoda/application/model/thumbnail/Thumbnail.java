@@ -1,4 +1,4 @@
-package com.github.bartoszpogoda.application.model;
+package com.github.bartoszpogoda.application.model.thumbnail;
 
 import javafx.scene.image.Image;
 

@@ -5,7 +5,7 @@ import java.io.FileFilter;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.github.bartoszpogoda.application.model.ThumbnailLoader;
+import com.github.bartoszpogoda.application.model.thumbnail.ThumbnailLoader;
 import com.github.bartoszpogoda.application.view.preview.FolderPreviewController;
 
 import javafx.fxml.Initializable;

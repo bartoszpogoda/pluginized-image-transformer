@@ -8,8 +8,8 @@ import java.util.ResourceBundle;
 import java.util.stream.Stream;
 
 import com.github.bartoszpogoda.application.Main;
-import com.github.bartoszpogoda.application.model.Thumbnail;
-import com.github.bartoszpogoda.application.model.ThumbnailCache;
+import com.github.bartoszpogoda.application.model.thumbnail.Thumbnail;
+import com.github.bartoszpogoda.application.model.thumbnail.ThumbnailCache;
 import com.github.bartoszpogoda.application.view.editor.ImageEditorController;
 import com.github.bartoszpogoda.application.view.preview.thumb.ThumbnailController;
 

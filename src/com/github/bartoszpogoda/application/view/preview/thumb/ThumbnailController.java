@@ -3,7 +3,7 @@ package com.github.bartoszpogoda.application.view.preview.thumb;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.github.bartoszpogoda.application.model.Thumbnail;
+import com.github.bartoszpogoda.application.model.thumbnail.Thumbnail;
 import com.github.bartoszpogoda.application.view.editor.ImageEditorController;
 
 import javafx.fxml.FXML;
