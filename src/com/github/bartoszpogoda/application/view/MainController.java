@@ -40,6 +40,7 @@ public class MainController implements Initializable {
 			folderPreviewController.setImageEditorController(imageEditorController);
 
 		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -60,7 +61,7 @@ public class MainController implements Initializable {
 
 		AnchorPane folderPreviewPane = (AnchorPane) loader.load();
 
-		folderPreviewController = (FolderPreviewController) loader.getController();
+		this.folderPreviewController = (FolderPreviewController) loader.getController();
 
 		this.rootBorderPane.setBottom(folderPreviewPane);
 	}

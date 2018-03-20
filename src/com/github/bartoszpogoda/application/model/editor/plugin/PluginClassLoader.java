@@ -9,8 +9,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.apache.commons.io.FileUtils;
 
 import com.github.bartoszpogoda.application.Main;
 
@@ -38,7 +41,7 @@ public class PluginClassLoader extends ClassLoader {
 	}
 
 	public List<LoadedImageTransformPlugin> loadImageTransformPlugins() {
-
+		
 		List<File> pluginFiles = Arrays.asList(PLUGIN_DIR.listFiles(new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String name) {

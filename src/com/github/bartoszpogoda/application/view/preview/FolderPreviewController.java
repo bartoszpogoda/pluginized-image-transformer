@@ -33,7 +33,6 @@ public class FolderPreviewController implements Initializable {
 	private int nextImagePositionX = 0;
 
 	private static final int THUMB_SIZE = 210;
-	// private static final int X_BOUND = THUMB_SIZE*6;
 
 	private ThumbnailCache thumbnailCache = new ThumbnailCache();
 
@@ -80,14 +79,11 @@ public class FolderPreviewController implements Initializable {
 		File[] imagesWithingfolder = folder.listFiles(new FileFilter() {
 			@Override
 			public boolean accept(File pathname) {
-				// TODO make sth better
 				return pathname.getName().contains(".jpg");
 			}
 		});
 
 		Stream.of(imagesWithingfolder).parallel().forEach(file -> {
-			System.out.println("TODO: process " + file.getName());
-
 			Task<Void> task = new Task<Void>() {
 				@Override
 				protected Void call() throws Exception {
@@ -95,16 +91,12 @@ public class FolderPreviewController implements Initializable {
 					Thumbnail thumbnail = thumbnailCache.get(file);
 
 					Platform.runLater(() -> {
-						// imageTest.setImage(thumbnail.getImage());
 						try {
 							addThumbnail(thumbnail);
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
 					});
-
-					// TODO add image to the preview, set up action listener etc.
-					// maek it like on stackoverflow in other thread or sth..
 
 					return null;
 				}

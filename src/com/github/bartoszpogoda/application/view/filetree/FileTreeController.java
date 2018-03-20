@@ -40,7 +40,6 @@ public class FileTreeController implements Initializable {
 						setGraphic(null);
 					} else {
 						setText(file.getName());
-						// setGraphic(getTreeItem().getGraphic());
 					}
 				}
 			};
@@ -49,7 +48,6 @@ public class FileTreeController implements Initializable {
 		treeView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 			System.out.println("Selected: " + newValue.getValue().getName());
 			
-			// test
 			folderPreviewController.loadThumbs(newValue.getValue());
 		});
 
