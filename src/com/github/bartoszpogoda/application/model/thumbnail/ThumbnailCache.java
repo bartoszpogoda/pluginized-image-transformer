@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javafx.scene.image.Image;
 
@@ -16,7 +17,7 @@ public class ThumbnailCache {
 	private ThumbnailLoader thumbnailLoader = new ThumbnailLoader();
 
 	public ThumbnailCache() {
-		cache = new HashMap<>();
+		cache = new ConcurrentHashMap<>();
 	}
 
 	public Thumbnail get(File file) throws IOException {

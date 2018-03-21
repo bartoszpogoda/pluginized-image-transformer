@@ -21,8 +21,14 @@ public class FileTreeController implements Initializable {
 	
 	private FolderPreviewController folderPreviewController;
 	
+	private File rootDir;
+	
 	public void setFolderPreviewController(FolderPreviewController folderPreviewController) {
 		this.folderPreviewController = folderPreviewController;
+	}
+	
+	public void setRootDir(File rootDir) {
+		this.rootDir = rootDir;
 	}
 
 	@Override

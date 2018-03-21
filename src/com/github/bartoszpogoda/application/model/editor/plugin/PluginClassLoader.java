@@ -99,4 +99,8 @@ public class PluginClassLoader extends ClassLoader {
 		return null;
 	}
 
+	public static void unload() {
+		instance = null;
+	}
+
 }

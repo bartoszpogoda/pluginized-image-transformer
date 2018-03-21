@@ -33,6 +33,20 @@ public class ImageEditorController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		//loadPlugins();
+
+	}
+
+	public void unloadPlugins() {
+		
+		pluginChooser.getItems().clear();
+		pluginChooser.setValue(null);
+		
+		PluginClassLoader.unload();
+		
+	}
+
+	public void loadPlugins() {
 		imageTransformPlugins = PluginClassLoader.getInstance().loadImageTransformPlugins();
 
 		imageTransformPlugins.forEach(plugin -> pluginChooser.getItems().add(plugin));
@@ -40,7 +54,6 @@ public class ImageEditorController implements Initializable {
 		if (pluginChooser.getItems().size() > 0) {
 			pluginChooser.getSelectionModel().select(0);
 		}
-
 	}
 
 	public void loadImageForThumbnail(Thumbnail thumbnail) {
@@ -67,10 +80,14 @@ public class ImageEditorController implements Initializable {
 		thread.start();
 
 	}
-	
 
 	@FXML
 	public void transformBtnClicked() {
+		if(pluginChooser.getSelectionModel().getSelectedItem() == null) {
+			System.out.println("No plugin selected");
+			return;
+		}
+		
 		Task<Void> task = new Task<Void>() {
 			@Override
 			protected Void call() throws Exception {
@@ -92,20 +109,32 @@ public class ImageEditorController implements Initializable {
 		thread.start();
 	}
 
-	@FXML
-	public void saveBtnClicked() {
-//		Task<Void> task = new Task<Void>() {
-//			@Override
-//			protected Void call() throws Exception {
-//				ImageIO.write(SwingFXUtils.fromFXImage(imageView.getImage(), null), "jpg", new File(displayedThumbnail.getPath()));
-//				
-//				return null;
-//			}
-//		};
+//	@FXML
+//	public void saveBtnClicked() {
+//		// Task<Void> task = new Task<Void>() {
+//		// @Override
+//		// protected Void call() throws Exception {
+//		// ImageIO.write(SwingFXUtils.fromFXImage(imageView.getImage(), null), "jpg",
+//		// new File(displayedThumbnail.getPath()));
+//		//
+//		// return null;
+//		// }
+//		// };
+//		//
+//		// Thread thread = new Thread(task);
+//		// thread.setDaemon(true);
+//		// thread.start();
+//		this.unloadPlugins();
 //
-//		Thread thread = new Thread(task);
-//		thread.setDaemon(true);
-//		thread.start();
-		System.out.println("Not yet implemented!");
+//		System.out.println("Not yet implemented!");
+//	}
+
+	@FXML public void loadBtnClicked() {
+		this.loadPlugins();
+	}
+
+	@FXML public void unloadBtnClicked() {
+		System.out.println("Unload plugins");
+		this.unloadPlugins();
 	}
 }

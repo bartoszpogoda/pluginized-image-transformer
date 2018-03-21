@@ -1,5 +1,6 @@
 package com.github.bartoszpogoda.application.view;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,6 +11,8 @@ import com.github.bartoszpogoda.application.view.filetree.FileTreeController;
 import com.github.bartoszpogoda.application.view.preview.FolderPreviewController;
 
 import javafx.fxml.Initializable;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,12 +35,23 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
+			
+			
 			loadFileTreeComponent();
 			loadFolderPreviewComponent();
 			loadImageEditorComponent();
+			
+//
+//			DirectoryChooser dirChooser = new DirectoryChooser();
+//			dirChooser.setTitle("Select root for exploring images");
+//			File selectedRoot = dirChooser.showDialog(primaryStage);
 
 			fileTreeController.setFolderPreviewController(folderPreviewController);
+//			fileTreeController.setRootDir(selectedRoot);
 			folderPreviewController.setImageEditorController(imageEditorController);
+			
+			
+
 
 		} catch (IOException e) {
 			e.printStackTrace();
